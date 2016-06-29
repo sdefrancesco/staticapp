@@ -23,6 +23,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'animate.css-rails', '~> 3.2'
 gem 'waypoints_rails', '~> 3.0'
+gem 'devise', '~> 4.1', '>= 4.1.1'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

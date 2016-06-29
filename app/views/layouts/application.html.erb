@@ -30,8 +30,16 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Sign In</a></li>
-            <li style='margin-top:7px'><a href="#" style="height:auto; padding-top:5px; padding-bottom:5px; font-family:'montserrat', sans-serif; font-size:12px" class="btn btn-primary btn-outline with-arrow btn-sm">Sign Up <i class="fa fa-user"></i></a></li>
+          <% if user_signed_in? %>
+          		<li><a><i class="fa fa-send" style="color:#27E1CE;"></i></a></li>
+          		<li><a><i class="fa fa-globe" style="color:#27E1CE;"></i></a></li>
+
+        		<li><%= link_to current_user.email, current_user %></li>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li style='margin-top:7px;'><a href="#" style="height:auto; padding-top:5px; padding-bottom:5px; font-family:'montserrat', sans-serif; font-size:12px" class="btn btn-primary btn-outline with-arrow btn-sm">Sign Up <i class="fa fa-user"></i></a></li>
+            <% end %>
             
           </ul>
         </div><!--/.nav-collapse -->
@@ -55,6 +63,7 @@
 <footer id="fh5co-footer" role="contentinfo">
 	
 		<div class="container">
+			
 			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>About Us</h3>
 				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
@@ -96,6 +105,7 @@
 	</footer>
 	<script src="assets/jquery.min.js"></script>
 	<script>
+	
 	$(document).ready(function() {
 		$('.navbar-default').css('background-color', 'transparent');
 		$('.navbar-default').css('border', 'none');
