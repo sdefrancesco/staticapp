@@ -14,26 +14,27 @@
 <body>
 
 
-<nav class="navbar navbar-default navbar-fixed-top" style="font-size:12px; font-family:'montserrat', sans-serif; font-weight:100">
+<nav class="navbar navbar-default navbar-fixed-top" style="font-size:12px; font-family:'montserrat', sans-serif; font-weight:100; color:white;">
       <div class="container">
-        <div class="navbar-header" >
+        <div class="navbar-header" style="color:white;" >
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">PostCard Co</a>
+          <%= link_to 'Post Card Co', root_path, :class => 'navbar-brand' %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             
-            <li><%= link_to 'about', about_path %></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to 'About', about_path %></li>
+            <li><%= link_to 'Contact', contact_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
           		<li><a><i class="fa fa-send" style="color:#27E1CE;"></i></a></li>
+          		<li><a><i class=" fa fa-envelope" style="color:#27E1CE;"></i></a></li>
           		<li><a><i class="fa fa-globe" style="color:#27E1CE;"></i></a></li>
 
         		
@@ -72,11 +73,13 @@
 
 
 
-<div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
+<div class="fh5co-cta" style="background-image: url('/assets/slide_2.jpg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box fadeInUp animated">
-				<h3>We Try To Update The Site Everyday</h3>
+				<i class="fa fa-send" style="font-size:50px; margin-bottom:20px; color:#27E1CE;"></i>
+				<h3>Never Mail Another Card Again</h3>
+				<p>Let us do it for you.</p>
 				<p><a href="#" class="btn btn-primary btn-outline with-arrow">Get started now! <i class="fa fa-arrow-right"></i></a></p>
 			</div>
 		</div>
@@ -84,7 +87,8 @@
 <footer id="fh5co-footer" role="contentinfo">
 	
 		<div class="container">
-			
+			<h1 style="font-family:'Raleway',sans-serf; color:white; font-weight:100;">Post Card Co</h1>
+
 			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>About Us</h3>
 				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
@@ -110,15 +114,16 @@
 			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Follow Us</h3>
 				<ul class="fh5co-social">
-					<li><a href="#"><i class="icon-twitter"></i></a></li>
-					<li><a href="#"><i class="icon-facebook"></i></a></li>
-					<li><a href="#"><i class="icon-google-plus"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" style="color:#27E1CE;"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook" style="color:#27E1CE;"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus" style="color:#27E1CE;"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram" style="color:#27E1CE;"></i></a></li>
 				</ul>
 			</div>
 			
 			
 			<div class="col-md-12 fh5co-copyright text-center">
+				<i class="fa fa-leaf"style="color:#27E1CE; font-size: 20px;"></i>
 				<p>© 2016 POST Card Co All Rights Reserved. </p>
 			</div>
 			
