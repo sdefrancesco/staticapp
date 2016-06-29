@@ -43,8 +43,9 @@
                   <li><a href="#">Something else here</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Your Account </li>
-                  <li><a href="#"><i class="fa fa-gears" style="margin-right:3px; color:#27E1CE;"></i>Settings</a></li>
-                  <li><a href="#"><i class="fa fa-sign-out" style="margin-right:3px; color:#27E1CE;"></i><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
+                  
+                  <li><%= link_to '<i class="fa fa-sign-out"></i> Sign Out'.html_safe, destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to '<i class="fa fa-gears"></i> Settings'.html_safe, edit_user_registration_path%></li>
                 </ul>
               </li>
           <% else %>
