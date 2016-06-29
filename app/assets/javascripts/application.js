@@ -14,7 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 $(document).ready(function() {
-	alert('hey');
+		$('.navbar-default').css('background-color', 'transparent');
+		$('.navbar-default').css('border', 'none');
+
+		
+		$(document).scroll(function() {
+  			if ($(document).scrollTop() >= 50) {
+    // user scrolled 50 pixels or more;
+    // do stuff
+    		$('.navbar-default').css('background-color', '#262626');	
+  			} else {
+    			$('.navbar-default').css('background-color', 'transparent');
+  };
 });
+	});
 	
