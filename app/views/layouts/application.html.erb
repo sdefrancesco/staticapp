@@ -6,6 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,500|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600' rel='stylesheet' type='text/css'>
 </head>
@@ -36,7 +38,7 @@
 
         		
         		<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="color: #27E1CE; margin-right:5px;"></i><%= current_user.email %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Profile', current_user %></li>
                   <li><a href="#">Another action</a></li>
@@ -134,9 +136,13 @@
   			if ($(document).scrollTop() >= 50) {
     // user scrolled 50 pixels or more;
     // do stuff
-    		$('.navbar-default').css('background-color', '#262626');	
+    		
+    		$('.navbar-default').css('background-color', '#262626');
+    		$('.navbar-default').css('-webkit-box-shadow', '1px 2px 5px 3px rgba(0,0,0,0.18)');
   			} else {
     			$('.navbar-default').css('background-color', 'transparent');
+    			$('.navbar-default').css('-webkit-box-shadow', '0px 0px 0px 0px rgba(0,0,0,0.00)');
+    			
   };
 });
 	});
