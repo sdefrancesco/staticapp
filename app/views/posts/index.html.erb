@@ -1,0 +1,54 @@
+
+
+<div class='jumbotron'>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <h2>Hey, This is Where All Of Our Card Go</h2>
+  </div>
+</div>
+<div class="container">
+  <h1>Latest Cards</h1>
+
+
+
+<% @posts.each_slice(4) do |array_of_3_items|%>
+  <div class="row">
+    
+      <% array_of_3_items.each do |post|%>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b><%= post.title.titleize %></b>
+            <br>
+            <span class="text-muted" style="font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %></span>
+          </div>
+          <div class="panel-body">
+            <p><%= post.description %></p>
+          </div>
+          
+        </div>
+      
+    </div>
+    <% end %>
+  </div>
+<% end %>
+
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.description %></td>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Post', new_post_path %>
+
+
+</div>
