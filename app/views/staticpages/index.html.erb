@@ -3,9 +3,9 @@
 	<div class="container">
 		<div id='wrap' class="text-center" style="padding-top:30vh;">
 			<image class="img img-responsive"style="width:130px; margin-left:auto; margin-right:auto; padding-bottom:10px;"src="/assets/postcardcologofix.png"></image>
-			<h1 style="font-family:'montserrat', sans-serif; color:white; font-size:50px;">Post Card Co</h1>
+			<h1  class="animated fadeIn" style="font-family:'montserrat', sans-serif; color:white; font-size:50px;">Post Card Co</h1>
 			<h6>Mail Is For the Birds</h6>
-			<h6>POST Is For The People</h6>
+			<h6 id="post">POST Is For The People</h6>
 		</div>
 		
 	</div>
@@ -14,9 +14,9 @@
 
 <div class="wrapper" style="width:100%; height:auto; padding-top:50px; padding-bottom:50px; background-color:#333333;">
 	<div class="container text-center">
-		<i class="fa fa-globe" style="font-size:80px; margin-bottom:20px; color: #27E1CE;"></i>
-		<h2 style="color:white; font-family:'roboto', sans-serif; font-weight:100;"><b>Create</b>, Edit, and Send Postcards On <span style="color:#27E1CE">Customizable</span> Stationary To <i>Anywhere</i> In the World</h1>
-		<h4 style="color:gray;">Choose between different papers and envelopes to match the theme of your card.</h4>
+		<i id="globe" class="fa fa-globe" style="font-size:80px; margin-bottom:20px; color: #27E1CE;"></i>
+		<h2 id="choose" style="color:white; font-family:'roboto', sans-serif; font-weight:100;"><b>Create</b>, Edit, and Send Postcards On <span style="color:#27E1CE">Customizable</span> Stationary To <i>Anywhere</i> In the World</h1>
+		<h4 id="caption"style="color:gray;">Choose between different papers and envelopes to match the theme of your card.</h4>
 		<a href="#" style="height:auto; color:white; padding-top:12px; padding-bottom:12px; font-family:'montserrat', sans-serif; font-size:12px" class="btn btn-primary btn-outline with-arrow btn-sm">Get Started <i class="fa fa-arrow-right"></i></a>
 	</div>
 </div>
@@ -88,3 +88,21 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+	$('.animate-box').css('opacity', '0')
+	$('#caption').css('opacity', '0')
+		$('#choose').css('opacity', '0')
+		$('#globe').css('opacity', '0')
+		$('#post').waypoint(function() {
+			$('#globe').addClass('animated fadeInLeft');
+			$("#choose").addClass('animated fadeInUp');
+			$('#caption').addClass('animated fadeIn');
+			$('#globe').css('opacity', '1');
+			
+		 });
+
+		$('#choose').waypoint(function() {
+			$(".animate-box").addClass('animated fadeInUp');
+		});
+	</script>
