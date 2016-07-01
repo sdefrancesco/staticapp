@@ -1,13 +1,14 @@
 
 
-<div class='jumbotron'>
+<div class='jumbotron' style="height:300px; padding-top:100px;">
   <div class="container">
     <p id="notice"><%= notice %></p>
-    <h2>Hey, This is Where All Of Our Card Go</h2>
+    <h3 class="text-muted">Hey, This is Where All Of Our Card Go</h3>
   </div>
 </div>
+
 <div class="container">
-  <h1>Latest Cards</h1>
+  <h1>Recently Added</h1>
 
 
 
@@ -20,10 +21,11 @@
           <div class="panel-heading">
             <b><%= post.title.titleize %></b>
             <br>
-            <span class="text-muted" style="font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %></span>
+            <span class="text-muted" style="font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %> <span class="fa fa-clock-o" style="color:#27E1CE;"></span><span><%= post.created_at %></span></span>
           </div>
           <div class="panel-body">
             <p><%= post.description %></p>
+            <a><%= link_to 'Show More<i class="fa fa-arrow-right"></i>'.html_safe , post , :class => 'btn btn-primary btn-outline with-arrow btn-sm' %></a>
           </div>
           
         </div>
@@ -33,6 +35,11 @@
   </div>
 <% end %>
 
+    <h2>Traveler's</h2>
+    
+    <h2>Mother's Day</h2>
+    <h2>Christmas Cards</h2>
+    <h3>Veterans Day</h3>
     <tbody>
       <% @posts.each do |post| %>
         <tr>
@@ -48,7 +55,7 @@
 
   <br>
 
-  <%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New Post<i class="fa fa-arrow-right"></i>'.html_safe, new_post_path, :class => 'btn btn-primary btn-outline with-arrow' %>
 
 
 </div>
