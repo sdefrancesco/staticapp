@@ -1,9 +1,40 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron">
+	<div class="container">
+		<h1 style="font-weight:100"><%= @post.title.titleize %></h1>
+		<h4 style="font-family:'montserrat',sans-serifs">Posted By <b><%= @post.user.email %></b></h4>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2" style="background-color:rgba(128, 128, 128, 0.17);">
+			<h1>left</h1>
+		</div>
+		<div class="col-sm-8">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+			<%= image_tag @post.postcardimg.url(:large), :class => "img img-responsive"%>
+			<div style="background-color:rgba(0,0,0,.80); width:100%; height:auto; padding-top:10px; padding-bottom:10px; z-index:1; position:relative;">
+				<div class="container-fluid" style="padding-top:10px; -webkit-box-shadow: 0 -10px 10px .5px rgba(0,0,0,45);
+box-shadow: 0 -10px 10px .5px rgba(0,0,0,45);">
+					<h1 class="text-indent" style="color:white; font-family: 'raleway', sans-serif; font-weight:100; margin-bottom:10px;">
+						<%= @post.title.titleize %>
+					</h1>
+					<h6 style="font-family:'montserrat', sans-serif; color:white;"><i class=" fa fa-user" style="color: #27E1CE;margin-right:6px;"></i><%= @post.user.email.capitalize %></h6>
+					<p><small><%= @post.description.capitalize %></small></p>
+					<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path %>
+					
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 ">
+			<div class="container-fluid">
+				<button class="btn btn-primary btn-outline  btn-md"><i class="fa fa-plus"></i> My Cards</button>
+				<button class="btn btn-primary btn-outline  btn-md"><i class="fa fa-paint-brush"></i> Edit</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <p>
   <strong>Description:</strong>

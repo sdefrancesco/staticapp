@@ -2,17 +2,26 @@
 <div class="overlay" style="height:100vh; width:100%; background-color:rgba(0, 0, 0, 0.66);">
 	<div class="container">
 		<div id='wrap' class="text-center" style="padding-top:30vh;">
-			<image class="img img-responsive"style="width:130px; margin-left:auto; margin-right:auto; padding-bottom:10px;"src="/assets/postcardcologofix.png"></image>
-			<h1  class="animated fadeIn" style="font-family:'montserrat', sans-serif; color:white; font-size:50px;">Post Card Co</h1>
-			<h6>Mail Is For the Birds</h6>
-			<h6 id="post">POST Is For The People</h6>
+			<image class="img img-responsive"style="-webkit-filter: invert(100%); filter: invert(100%);
+width:130px; margin-left:auto; margin-right:auto; padding-bottom:10px;"src="/assets/postcardcologofix.png"></image>
+			<h1  class="animated fadeIn" style="font-family:'montserrat', sans-serif; color:white; font-size:50px; margin-bottom:5px; padding-bottom:0px;">POST Card Co</h1>
+			<h4 style="color:gray; margin-bottom:5px;"><b>Mail</b> Is For the <span>Birds</span></h4>
+			<h4 style="color:gray;" id="post"><b style="color:white;">POST</b> Is For The <b style="color:#27E1CE;">People</b></h4>
+			
+			<% if user_signed_in? %>
+				<button class="btn btn-primary btn-outline with-arrow btn-lg" style="color:white;font-family:'montserrat', sans-serif; font-size:12px;">My Cards</button>	
+			<% else %>
+				
+				<%= link_to 'Sign Up', new_user_registration_path, :class => 'btn btn-primary btn-outline btn-lg with-arrow', :style => "font-family:'montserrat', sans-serif; color:white; font-size:12px;" %>
+			<% end %>
 		</div>
 		
 	</div>
 </div>
 </div>
 
-<div class="wrapper" style="width:100%; height:auto; padding-top:50px; padding-bottom:50px; background-color:#333333;">
+<div class="wrapper" style="width:100%; height:auto; padding-top:50px; padding-bottom:50px; background-color:#333333;-webkit-box-shadow:inset 0 0 50px px #000000;
+box-shadow:inset 0 0 50px px #000000;">
 	<div class="container text-center">
 		<i id="globe" class="fa fa-globe" style="font-size:80px; margin-bottom:20px; color: #27E1CE;"></i>
 		<h2 id="choose" style="color:white; font-family:'roboto', sans-serif; font-weight:100;"><b>Create</b>, Edit, and Send Postcards On <span style="color:#27E1CE">Customizable</span> Stationary To <i>Anywhere</i> In the World</h1>
