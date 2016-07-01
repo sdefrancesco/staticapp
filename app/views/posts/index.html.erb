@@ -1,10 +1,12 @@
 
 
-<div class='jumbotron' style="height:300px; padding-top:100px;">
-  <div class="container">
-    <p id="notice"><%= notice %></p>
-    <h3 class="text-muted">Hey, This is Where All Of Our Card Go</h3>
-  </div>
+<div class='jumbotron' style="height:300px; background: url('/assets/slide_2.jpeg')">
+  
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <h3 class="text-muted">Hey, This is Where All Of Our Card Go</h3>
+    </div>
+  
 </div>
 
 <div class="container">
@@ -24,6 +26,7 @@
             <span class="text-muted" style="font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %> <span class="fa fa-clock-o" style="color:#27E1CE;"></span><span><%= post.created_at %></span></span>
           </div>
           <div class="panel-body">
+            <%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive' %>
             <p><%= post.description %></p>
             <a><%= link_to 'Show More<i class="fa fa-arrow-right"></i>'.html_safe , post , :class => 'btn btn-primary btn-outline with-arrow btn-sm' %></a>
           </div>
@@ -39,7 +42,7 @@
     
     <h2>Mother's Day</h2>
     <h2>Christmas Cards</h2>
-    <h3>Veterans Day</h3>
+    <h2>Veterans Day</h2>
     <tbody>
       <% @posts.each do |post| %>
         <tr>
