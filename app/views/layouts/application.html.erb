@@ -55,9 +55,9 @@
             <li><%= link_to 'Sign In', new_user_session_path %></li>
             <li>
             	
-            	<%= link_to 'Sign Up', :class => 'btn btn-primary btn-outline with-arrow btn-sm', :style => 'font-size: 12px; font-family:montserrat, sans-serif; height:auto; padding-bottom:5px; padding-top:5px; margin-top:10px;' do %>
-  					<i class="fa fa-user"></i>Sign Up
-				<% end	%>
+            	<%= link_to 'Sign Up<i class="fa fa-arrow-right"></i>'.html_safe, new_user_registration_path, :class => 'btn btn-primary btn-outline with-arrow btn-sm', :style => 'font-size: 12px; font-family:montserrat, sans-serif; height:auto; padding-bottom:5px; padding-top:5px; margin-top:10px;' %>
+  					
+				
             	
             </li>
             
