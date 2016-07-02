@@ -1,6 +1,7 @@
 class StaticpagesController < ApplicationController
-	def home
-		
+	def index
+		@user = User.all 
+		@post = Post.all
 	end
 
 	def about

@@ -1,16 +1,19 @@
 
 
-<div class='jumbotron' style="height:300px; background: url('/assets/slide_2.jpeg')">
+<div class='jumbotron' style="height:300px; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
   
     <div class="container">
       <p id="notice"><%= notice %></p>
-      <h3 class="text-muted">Hey, This is Where All Of Our Card Go</h3>
+      <image style="width:130px; margin-left:auto; margin-right:auto;"class="img img-responsive" src="/assets/postcardcologofix.png"></image>
+      <h1 class=" text-center" style="color:white;font-family:'montserrat', sans-serif;">Our Cards</h1>
+      <p class="text-center" style="font-family:'raleway', sans-serif; color:white; font-weight:100">All Of Our Cards. Contributed by Our Artists</p>
     </div>
   
 </div>
 
 <div class="container">
-  <h1>Recently Added</h1>
+  <h1 style="font-family:'montserrat', sans-serif">Recently Added</h1>
+  <h6 class="text-muted">There are currently  <b><%= @user.count %></b> active users and <b><%= @posts.count %></b> Card Uploads.</h6>
 
 
 

@@ -27,6 +27,8 @@ gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'simple_form', '~> 3.2', '>= 3.2.1' 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'stellar-js-rails', '~> 0.6.2.1'
+gem 'sunspot', '~> 2.2', '>= 2.2.5'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

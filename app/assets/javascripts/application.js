@@ -10,14 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require jquery.stellar
 
-
+  
+  $.stellar();
 $(document).ready(function() {
+  
 		$('.navbar-default').css('background-color', 'transparent');
 		$('.navbar-default').css('border', 'none');
 
