@@ -1,23 +1,25 @@
-<div class="container" style="margin-top:60px;">
-<div style="background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%); margin-bottom:10px; max-width:500px; margin-left:auto; margin-right:auto; padding-top:50px; padding-bottom:50px; background-color:rgba(0, 0, 0, 0.67); padding-left:50px; padding-right:50px; -webkit-box-shadow: 1px 2px 32px -10px rgba(0,0,0,0.75); -moz-box-shadow: 1px 2px 32px -10px rgba(0,0,0,0.75); box-shadow: 1px 2px 32px -10px rgba(0,0,0,0.75);">
-<h1 style="font-family:'montserrat',sans-serif; font-weight:100; color:white;"><i class="fa fa-lock" style="margin-right:8px; color:#27E1CE;"></i>Log In</h1>
+<div style="background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);">
+  <div class="container">
+    <div style=" max-width:500px; margin-left:auto; margin-right:auto; padding-top:50px; padding-bottom:50px; padding-left:50px; padding-right:50px;">
+          <h1 style="font-family:'montserrat',sans-serif; font-weight:100; color:white;"><i class="fa fa-lock" style="margin-right:8px; color:#27E1CE;"></i>Log In</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-  <div style="font-family:'montserrat',sans-serif; color:white; font-size:12px;">
-    <%= f.input :email, required: false, autofocus: true %>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+             <div style="font-family:'montserrat',sans-serif; color:white; font-size:12px;">
+                <%= f.input :email, required: false, autofocus: true %>
+             </div>
+          <div style="font-family:'montserrat',sans-serif; color:white; font-size:12px;">
+            <%= f.input :password, required: false %>
+          </div>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", :class => 'btn btn-outline btn-primary btn-lg with-arrow', :style => 'font-family:"montserrat", sans-serif; font-size:12px; color:white;' %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
     </div>
-<div style="font-family:'montserrat',sans-serif; color:white; font-size:12px;">
-    <%= f.input :password, required: false %>
-    </div>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", :class => 'btn btn-outline btn-primary btn-lg with-arrow', :style => 'font-family:"montserrat", sans-serif; font-size:12px; color:white;' %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-</div>
 </div>

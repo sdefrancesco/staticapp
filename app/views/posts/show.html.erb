@@ -21,7 +21,9 @@ box-shadow: 0 -10px 10px .5px rgba(0,0,0,45);">
 					</h1>
 					<h6 style="font-family:'montserrat', sans-serif; color:white;"><i class=" fa fa-user" style="color: #27E1CE;margin-right:6px;"></i><%= @post.user.email.capitalize %></h6>
 					<p><small><%= @post.description.capitalize %></small></p>
-					<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path %>
+					<% if current_user.present? && current_user.id ==  @post.user_id %>
+						<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path %>
+					<% end %>
 					
 					
 				</div>

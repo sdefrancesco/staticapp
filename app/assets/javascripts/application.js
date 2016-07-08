@@ -20,10 +20,12 @@
 
   
   $.stellar();
+  $('.navbar-default').css('background-color', 'transparent');
+  $('.navbar-default').css('border', 'none');
+
 $(document).ready(function() {
   
-		$('.navbar-default').css('background-color', 'transparent');
-		$('.navbar-default').css('border', 'none');
+	
 
 		
 		$(document).scroll(function() {
