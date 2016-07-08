@@ -1,12 +1,15 @@
 
 
-<div class='jumbotron' data-stellar-background-ratio="0.5" style="padding-top:50px; padding-bottom:50px;height:auto; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
+<div class='jumbotron' data-stellar-background-ratio="0.5" style="padding-top:50px; padding-bottom:50px;height:100vh;width:100%;background-size:cover; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
   
-    <div class="container">
+    <div class="container text-center" style="margin-top:20vh">
       
       <image style="width:130px; margin-left:auto; margin-right:auto;"class="img img-responsive" src="/assets/postcardcologofix.png"></image>
-      <h1 class=" text-center" style="color:white;font-family:'montserrat', sans-serif;">Our Cards</h1>
-      <p class="text-center" style="font-family:'raleway', sans-serif; color:white; font-weight:100">All Of Our Cards. Contributed by Our Artists</p>
+      <h1 class="" style="color:white;font-family:'montserrat', sans-serif;">Our Cards</h1>
+      <p class="" style="font-family:'raleway', sans-serif; color:white; font-weight:100">All Of Our Cards. Contributed by Our Artists</p>
+      <% if user_signed_in? %>
+        <%= link_to 'Add A Card <i class="fa fa-plus"></i>'.html_safe, new_post_path, :class => 'btn btn-primary btn-outline with-arrow' %>
+      <% end %>
     </div>
   
 </div>
@@ -26,13 +29,13 @@
           <div class="panel-heading">
             <b><%= post.title.titleize %></b>
             <br>
-            <span class="text-muted" style="margin-bottom:0px; line-height:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %> </span>
+            <span class="text-muted" style="margin-bottom:0px; line-height:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE; margin-right:5px;"></i><%= post.user.email %> </span>
             </br>
-           <span class="text-muted" style="line-height: 0px; margin-top:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-circle-o" style="color:#27E1CE;"></i><%= time_ago_in_words(post.created_at) %> ago </span>
+           <span class="text-muted" style="line-height: 0px; margin-top:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-clock-o" style="color:#27E1CE; margin-right:5px;"></i><%= time_ago_in_words(post.created_at) %> ago </span>
           </div>
           <div class="panel-body">
             <%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive', :style => ('width:100%; height:auto') %>
-            <p><%= truncate(post.description) %></p>
+            <p style="font-size:12px;margin-top:5px; text-indent:10px; font-family:'montserrat',sans-serif;"><i><%= truncate(post.description).capitalize %></p></i>
             <a><%= link_to 'Show More<i class="fa fa-arrow-right"></i>'.html_safe , post , :class => 'btn btn-primary btn-outline with-arrow btn-sm' %></a>
 
           </div>
@@ -44,6 +47,13 @@
   </div>
 <% end %>
 
+    
+    
+   
+   
+    
+
+<div class="container">
     <h2>Traveler's</h2>
     
     <h2>Mother's Day</h2>
@@ -67,6 +77,7 @@
   <%= link_to 'New Post<i class="fa fa-arrow-right"></i>'.html_safe, new_post_path, :class => 'btn btn-primary btn-outline with-arrow' %>
 
 
+</div>
 </div>
 
 <script>

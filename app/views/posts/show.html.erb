@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+
 <div class="jumbotron">
 	<div class="container">
 		<h1 style="font-weight:100"><%= @post.title.titleize %></h1>
-		<h4 style="font-family:'montserrat',sans-serifs">Posted By <b><%= @post.user.email %></b></h4>
+		<h4 style="font-family:'montserrat',sans-serif">Posted By <b><%= @post.user.email %></b></h4>
 	</div>
 </div>
 <div class="container">
@@ -16,13 +16,13 @@
 			<div style="background-color:rgba(0,0,0,.80); width:100%; height:auto; padding-top:10px; padding-bottom:10px; z-index:1; position:relative;">
 				<div class="container-fluid" style="padding-top:10px; -webkit-box-shadow: 0 -10px 10px .5px rgba(0,0,0,45);
 box-shadow: 0 -10px 10px .5px rgba(0,0,0,45);">
-					<h1 class="text-indent" style="color:white; font-family: 'raleway', sans-serif; font-weight:100; margin-bottom:10px;">
+					<h1 class="text-indent" style="color:white; font-family: 'raleway', sans-serif; font-weight:100; margin-bottom:20px;">
 						<%= @post.title.titleize %>
 					</h1>
-					<h6 style="font-family:'montserrat', sans-serif; color:white;"><i class=" fa fa-user" style="color: #27E1CE;margin-right:6px;"></i><%= @post.user.email.capitalize %></h6>
-					<h6 style="font-family:'montserrat', sans-serif; color:white;"><i class=" fa fa-clock-o" style="color: #27E1CE;margin-right:6px;"></i><%= time_ago_in_words(@post.created_at).capitalize %></h6>
+					<h6 style="font-family:'montserrat', sans-serif; color:white;margin-bottom:5px;"><i class=" fa fa-user" style="color: #27E1CE;margin-right:6px;"></i><%= @post.user.email.capitalize %></h6>
+					<h6 style="font-family:'montserrat', sans-serif; color:white;"><i class=" fa fa-clock-o" style="color: #27E1CE;margin-right:6px;"></i><%= time_ago_in_words(@post.created_at).capitalize %> ago</h6>
 					<h6 style="font-size:10px;margin-bottom:10px;font-family:'montserrat', sans-serif; font-weight:300; color:white;"><b>Description</b></h6>
-					<p><small><%= @post.description.capitalize %></small></p>
+					<p style="text-indent:5px;"><small><%= @post.description.capitalize %></small></p>
 					<% if current_user.present? && current_user.id ==  @post.user_id %>
 						<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path %>
 						<%= link_to '<i class="fa fa-trash"></i>'.html_safe, method: :delete, data: {confirm: 'Are you sure?' } %>
