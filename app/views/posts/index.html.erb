@@ -3,7 +3,7 @@
 <div class='jumbotron' data-stellar-background-ratio="0.5" style="padding-top:50px; padding-bottom:50px;height:auto; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
   
     <div class="container">
-      <p id="notice"><%= notice %></p>
+      
       <image style="width:130px; margin-left:auto; margin-right:auto;"class="img img-responsive" src="/assets/postcardcologofix.png"></image>
       <h1 class=" text-center" style="color:white;font-family:'montserrat', sans-serif;">Our Cards</h1>
       <p class="text-center" style="font-family:'raleway', sans-serif; color:white; font-weight:100">All Of Our Cards. Contributed by Our Artists</p>
@@ -26,13 +26,15 @@
           <div class="panel-heading">
             <b><%= post.title.titleize %></b>
             <br>
-            <span class="text-muted" style="font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %> <span class="fa fa-clock-o" style="color:#27E1CE;"></span><span><%= post.created_at %></span></span>
+            <span class="text-muted" style="margin-bottom:0px; line-height:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-user" style="color:#27E1CE;"></i><%= post.user.email %> </span>
+            </br>
+           <span class="text-muted" style="line-height: 0px; margin-top:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-circle-o" style="color:#27E1CE;"></i><%= time_ago_in_words(post.created_at) %> ago </span>
           </div>
           <div class="panel-body">
-            <%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive' %>
+            <%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive', :style => ('width:100%; height:auto') %>
             <p><%= truncate(post.description) %></p>
             <a><%= link_to 'Show More<i class="fa fa-arrow-right"></i>'.html_safe , post , :class => 'btn btn-primary btn-outline with-arrow btn-sm' %></a>
-            
+
           </div>
           
         </div>
