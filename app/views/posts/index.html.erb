@@ -34,7 +34,7 @@
            <span class="text-muted" style="line-height: 0px; margin-top:0px;font-family:'Montserrat', sans-serif; font-size:10px;"><i class="fa fa-clock-o" style="color:#27E1CE; margin-right:5px;"></i><%= time_ago_in_words(post.created_at) %> ago </span>
           </div>
           <div class="panel-body">
-            <%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive', :style => ('width:100%; height:auto') %>
+            <%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive', :style => ('width:100%; height:auto')%>
             <p style="font-size:12px;margin-top:5px; text-indent:10px; font-family:'montserrat',sans-serif;"><i><%= truncate(post.description).capitalize %></p></i>
             <a><%= link_to 'Show More<i class="fa fa-arrow-right"></i>'.html_safe , post , :class => 'btn btn-primary btn-outline with-arrow btn-sm' %></a>
 

@@ -1,23 +1,38 @@
+<div style="height:100vh;background: rgba(127,93,240,1);
+background: -moz-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(127,93,240,1)), color-stop(29%, rgba(127,93,240,1)), color-stop(76%, rgba(163,57,233,1)), color-stop(100%, rgba(182,39,230,1)));
+background: -webkit-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
+background: linear-gradient(135deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
+">
 <div class="container">
 <div style="max-width:500px; margin-left:auto; margin-right:auto; padding-top:100px; padding-bottom:50px;">
-<h2 style="font-family:'raleway',sans-serif; font-weight:100"><i class="fa fa-lock" style="margin-right:8px; color:gray"></i>Sign Up</h2>
+<h1 class="animated fadeIn"style="font-family:'raleway',sans-serif; font-weight:100; color:white; font-size:60px;"><i class="fa fa-user" style="margin-right:8px; color:white"></i>Sign Up</h1>
 
-<h2>Sign up</h2>
+<h5 style="font-family:'montserrat',sans-serif; color:white;">Fill In The Required Fields To Sign up</h5>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+  	<div style="font-family:'montserrat',sans-serif;  color:white; font-size:12px;">
+    	<%= f.input :email, required: true, autofocus: true %>
+    </div>
+    <div style="font-family:'montserrat',sans-serif;  color:white; font-size:12px;">
+   		 <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    </div>
+    <div style="font-family:'montserrat',sans-serif;  color:white; font-size:12px;">
     <%= f.input :password_confirmation, required: true %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", :class => 'btn btn-primary btn-outline with-arrow btn-md', :style => 'color:white; font-family:"montserrat", sans-serif; font-size:12px;'%>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
 </div>
 </div>
