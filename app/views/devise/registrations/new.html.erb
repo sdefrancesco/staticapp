@@ -1,4 +1,4 @@
-<div style="height:100vh;background: rgba(127,93,240,1);
+<div style="width:100%;height:100vh;background: rgba(127,93,240,1);
 background: -moz-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
 background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(127,93,240,1)), color-stop(29%, rgba(127,93,240,1)), color-stop(76%, rgba(163,57,233,1)), color-stop(100%, rgba(182,39,230,1)));
 background: -webkit-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
@@ -6,8 +6,8 @@ background: -o-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1)
 background: -ms-linear-gradient(-45deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
 background: linear-gradient(135deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29%, rgba(163,57,233,1) 76%, rgba(182,39,230,1) 100%);
 ">
-<div class="container">
-<div style="max-width:500px; margin-left:auto; margin-right:auto; padding-top:100px; padding-bottom:50px;">
+<div class="container vertical-center" style="max-width:400px;">
+<div style="width:100%; margin-left:auto; margin-right:auto; padding-top:100px; padding-bottom:50px;">
 <h1 class="animated fadeIn"style="font-family:'raleway',sans-serif; font-weight:100; color:white; font-size:60px;"><i class="fa fa-user" style="margin-right:8px; color:white"></i>Sign Up</h1>
 
 <h5 style="font-family:'montserrat',sans-serif; color:white;">Fill in the required fields to sign up</h5>
@@ -44,4 +44,18 @@ background: linear-gradient(135deg, rgba(127,93,240,1) 0%, rgba(127,93,240,1) 29
 		color:white;
 		font-size:12px;
 	}
+  	
+  	.vertical-center {
+    
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  }
 </style>
