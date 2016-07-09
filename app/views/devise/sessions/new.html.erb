@@ -1,7 +1,7 @@
 <div style="height:100vh;background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);">
   <div class="container">
     <div style=" max-width:500px; margin-left:auto; margin-right:auto; padding-top:20vh; padding-bottom:20vh; padding-left:50px; padding-right:50px;">
-          <h1 style="font-family:'montserrat',sans-serif; font-weight:100; color:white;"><i class="fa fa-lock" style="margin-right:8px; color:#27E1CE;"></i>Log In</h1>
+          <h1 class="animated fadeIn"style="font-family:'raleway',sans-serif; font-weight:100; color:white; font-size:60px;"><i class="fa fa-lock" style="margin-right:8px; color:white"></i>Log In</h1>
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -11,7 +11,9 @@
           <div style="font-family:'montserrat',sans-serif; color:white; font-size:12px;">
             <%= f.input :password, required: false %>
           </div>
+          <div style="font-family:'montserrat',sans-serif; color:white; font-size:12px;">
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
           </div>
 
       <div class="form-actions">
@@ -23,3 +25,10 @@
     </div>
   </div>
 </div>
+<style>
+.form-control {
+    color:white;
+    font-size:12px;
+  }
+
+</style>
