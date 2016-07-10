@@ -1,0 +1,65 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1>Administration</h1>
+	</div>
+</div>
+<% if current_user.try(:admin?) %>
+	<div class="container">
+		<h1>Sup <%= current_user.email %>. You Know You're an Admin Right?</h1>
+		<div class="row">
+		<div class="col-md-5">
+			<% @user.each do |user| %>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<% if user.admin? %>
+							<i class="fa fa-star"></i>
+						<% else %>
+							<i class="fa fa-user"></i>
+						<% end %>
+						<%= user.email.capitalize %>
+						<% if user.admin? %>
+							<span class="label label-primary">Admin</span>
+						<% else %>
+							<span class="label label-default">Artist</span>
+						<% end %>
+					</div>
+					<div class="panel-body">
+						<h6>Date Joined</h6>
+						<h6><%= time_ago_in_words(user.created_at) %> ago</h6>
+						
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-md-7">
+		<h2>Latest Cards</h2>
+		<h6>There are <%= @post.count %> posts.</h6>
+		<% @post.each_slice(3) do |row| %>
+			<div class="row">
+
+				<% row.each do |post| %>
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3><%= post.title %></h3>
+								<h6><%= time_ago_in_words(post.created_at) %> ago</h6>
+							</div>
+							<div class="panel-body">
+								
+								<%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive'%>
+								<%= link_to '<i class="fa fa-pencil"></i>'.html_safe, post %>
+							</div>
+
+						</div>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+		</div>
+		</div>
+
+	<% else %>
+		<h1>gtfo dude.</h1>
+		</div>
+<% end %>
+</div>

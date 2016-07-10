@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/contact' => 'staticpages#contact'
   get '/careers' => 'staticpages#careers'
   get '/about' => 'staticpages#about'
+  get '/admin' => 'staticpages#admin'
   
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

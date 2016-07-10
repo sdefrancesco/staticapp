@@ -13,6 +13,20 @@
 </head>
 <body>
 
+<% if current_user.try(:admin?) %>
+<nav style=" padding-top:5px; padding-bottom:5px;bottom:0px;width:100%; background: rgba(255,77,252,0.46);
+background: -moz-linear-gradient(45deg, rgba(255,77,252,0.46) 0%, rgba(177,96,235,0.61) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,77,252,0.46)), color-stop(100%, rgba(177,96,235,0.61)));
+background: -webkit-linear-gradient(45deg, rgba(255,77,252,0.46) 0%, rgba(177,96,235,0.61) 100%);
+background: -o-linear-gradient(45deg, rgba(255,77,252,0.46) 0%, rgba(177,96,235,0.61) 100%);
+background: -ms-linear-gradient(45deg, rgba(255,77,252,0.46) 0%, rgba(177,96,235,0.61) 100%);
+background: linear-gradient(45deg, rgba(255,77,252,0.46) 0%, rgba(177,96,235,0.61) 100%);;position:fixed; z-index:999; height:auto;">
+  <div class="container">
+    <h6>Admin</h6>
+  </div> 
+</nav>
+<% end %>
+
 <% if notice %>
   <div id="notice" class="notice text-center" style="padding-top:50px; padding-bottom:50px;z-index:9999;background-color:rgba(0, 0, 0, 0.82);  width:100%; height:auto; ">
     <h1><i class="fa fa-rocket" style="color:#27e1ce;"></i></h1>
@@ -25,6 +39,7 @@
     <h2 style="color:white; font-family:'raleway', sans-serif; font-weight:100;"><%= alert %></h2>
   </div>
 <% end %>
+
 <nav class="navbar navbar-default navbar-fixed-top" style="font-size:12px; font-family:'montserrat', sans-serif; font-weight:100; color:white;">
       <div class="container">
         <div class="navbar-header" style="color:white;" >
@@ -57,7 +72,15 @@
 
         		
         		<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="color: #27E1CE; margin-right:5px;"></i><%= current_user.email %> <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <% if current_user.try(:admin?) %>
+                   <i class="fa fa-star" style="color: #9227E1;"></i>
+                <% else %>
+                  <i class="fa fa-user" style="color: #27E1CE; margin-right:5px;"></i>
+                <% end %>
+                  <%= current_user.email %> <span class="caret"></span>
+                
+                </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Profile', current_user %></li>
                   <li><a href="#">Another action</a></li>
