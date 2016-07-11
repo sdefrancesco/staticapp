@@ -1271,11 +1271,21 @@ h1, h2, h3, h4, h5, h6, figure {
 
   }
 
+
+.navbar-default .navbar-nav > li > a {
+      color:white;
+
+    }
+
+    .navbar-default .navbar-nav > li > a:hover {
+      color:#8A9DAF;
+      
+    }
+
+
   .h6class {
     margin:5px;
     font-family:'montserrat',sans-serif;
-    font-size:10px;
+    font-size:12px;
 
   }
-
- 
