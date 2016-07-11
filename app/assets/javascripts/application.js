@@ -19,16 +19,17 @@
 //= require jquery.stellar
 
 
+
   
-  $.stellar();
-  $('.navbar-default').css('background-color', 'transparent');
-  $('.navbar-default').css('border', 'none');
+
   
 
 $(document).ready(function() {
   
-	
+  
+	$(window).stellar();
 
+    
 		
 		$(document).scroll(function() {
   			if ($(document).scrollTop() >= 50) {

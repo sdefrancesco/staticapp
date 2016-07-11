@@ -3,11 +3,13 @@
 		<h1>Administration</h1>
 	</div>
 </div>
+
 <% if current_user.try(:admin?) %>
 	<div class="container">
 		<h1>Sup <%= current_user.email %>. You Know You're an Admin Right?</h1>
 		<div class="row">
 		<div class="col-md-5">
+		  <h6 style="color:gray">POST Card Co has <%= @user.count %> Users</h6>
 			<% @user.each do |user| %>
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -16,7 +18,7 @@
 						<% else %>
 							<i class="fa fa-user"></i>
 						<% end %>
-						<%= user.email.capitalize %>
+						<%= link_to user.email.capitalize, user  %>
 						<% if user.admin? %>
 							<span class="label label-primary">Admin</span>
 						<% else %>
@@ -24,26 +26,31 @@
 						<% end %>
 					</div>
 					<div class="panel-body">
-						<h6>Date Joined</h6>
-						<h6><%= time_ago_in_words(user.created_at) %> ago</h6>
+						<h6>Date Joined <b class= 'text-muted'><%= time_ago_in_words(user.created_at) %> ago</b></h6>
+						<h6>Last Sign In At <b class= 'text-muted'><%= time_ago_in_words(user.last_sign_in_at) %> ago</b></h6>
+						<h6>User Signed In <b class= 'text-muted'><%= user.sign_in_count %> times</b></h6>
 						
+
 					</div>
 				</div>
+				
 			<% end %>
 		</div>
 		<div class="col-md-7">
-		<h2>Latest Cards</h2>
-		<h6>There are <%= @post.count %> posts.</h6>
-		<% @post.each_slice(3) do |row| %>
-			<div class="row">
+			<h2>Latest Cards</h2>
+			<h6>There are <%= @post.count %> posts.</h6>
+			<% @post.each_slice(3) do |row| %>
+				<div class="row">
 
-				<% row.each do |post| %>
-					<div class="col-md-4">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h3><%= post.title %></h3>
-								<h6><%= time_ago_in_words(post.created_at) %> ago</h6>
-							</div>
+					<% row.each do |post| %>
+						<div class="col-md-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h5><b><%= post.title %></b></h5>
+									<h6>Created <b class="text-muted"><%= time_ago_in_words(post.created_at) %></b> ago</h6>
+									<h6>Posted By <b><%= post.user.email %></b></h6>
+									<h6>Last Edited <b class= 'text-muted'><%= time_ago_in_words(post.updated_at) %></b> ago</h6>
+								</div>
 							<div class="panel-body">
 								
 								<%= image_tag post.postcardimg.url(:medium), :class => 'img img-responsive'%>
@@ -63,3 +70,16 @@
 		</div>
 <% end %>
 </div>
+
+<style>
+	h6 {
+		margin:5px;
+		font-family:'montserrat',sans-serif;
+		font-size:10px;
+
+	}
+
+	a:hover {
+		background-color:transparent;
+	}
+</style>
