@@ -1,154 +1,38 @@
-
-
-<div class="container-fluid" style="padding-top:100px;">
-	<div class="row">
-		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-        <h1><%= @user.name %></h1>
-    	 <div class="well profile">
-            <div class="col-sm-12">
-                <div class="col-xs-12 col-sm-7">
-                	<small><strong>Post Card</strong> Co</small>
-                    <h4><i class="fa fa-user" style="color:#27E1CE; margin-right:8px"></i><%= @user.email %></h3>
-                    <p><strong>About: </strong> <%= @user.bio %> </p>
-                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                    <p><strong>Date Of Birth: </strong> <%= @user.date_of_birth %> </p>
-                    
-                </div>             
-                <div class="col-xs-12 col-sm-5 text-center">
-                    <figure>
-                        <%= image_tag @user.avatar.url(:medium), :class => 'img img-responsive img-circle img-round', :style => 'width:200px; height:200px;' %>
-                        <figcaption class="ratings">
-                            <h6>Artist Rating
-                            <a href="#">
-                                <span style="color:#27E1CE;" class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                <span style="color:#27E1CE;" class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                <span style="color:#27E1CE;" class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                <span style="color:#27E1CE;" class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                 <span style="color:#27E1CE;" class="fa fa-star-o"></span>
-                            </a> 
-                            </h6>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>            
-            <div class="col-xs-12 divider text-center">
-                <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong> 20,7K </strong></h2>                    
-                    <p><small>Followers</small></p>
-                    <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
-                </div>
-                <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong>245</strong></h2>                    
-                    <p><small>Following</small></p>
-                    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
-                </div>
-                <div class="col-xs-12 col-sm-4 emphasis">
-                    <h2><strong>43</strong></h2>                    
-                    <p><small>Snippets</small></p>
-                    <div class="btn-group dropup btn-block">
-                      <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
-                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <ul class="dropdown-menu text-left" role="menu">
-                        <li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
-                        <li><a href="#"><span class="fa fa-list pull-right"></span> Add or remove from a list  </a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>
-                      </ul>
-                    </div>
+<div class="jumbotron" style="height:auto; padding-top:100px; padding-bottom:100px;">
+    <div class="container">
+        <h1 style="font-family:'montserrat',sans-serif;">
+            <% if @user.try(:admin?) %>
+                <i class="fa fa-diamond" style="color:purple"></i>
+            <% else %>
+                 <i class="fa fa-user" style="color:#27E1CE"></i>
+            <% end %>
+            <% if @user.name? %>
+                <%= @user.name %>
+            <% else %>
+                Post Card Co User
+            <% end %>
+        </h1>
+        <div class="row">
+        
+            <div style="max-width:400px; padding:5px; margin-bottom:10px;">
+                <% if @user.avatar? %>
+                    <%= image_tag @user.avatar.url(:medium), :class => 'img img-rounded img-circle', :style => 'width:200px; height:180px; display: inline-block' %>
+                <% else %>
+                    <image style="width:200px; height:180px; display: inline-block" class="img img-rounded img-circle" src="/assets/nobody.jpg"></image>
+                <% end %>
+                <div style="float:right;display:inline-block; margin-top:30px;">
+                    <h5 class="text-muted"><i class="fa fa-envelope" style="margin-right:5px;"></i> <%= @user.email %></h5>
+                    <h5 class="text-muted"><i class="fa fa-phone" style="margin-right:5px;"></i> <%= @user.email %></h5>
+                    <h5 class="text-muted"><i class="fa fa-envelope" style="margin-right:5px;"></i> <%= @user.email %></h5>
                 </div>
             </div>
-    	 </div>                 
-		</div>
-	</div>
+            <% if @user.bio? %>
+                <p style="margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>About <%= @user.name %></strong> <br><%= @user.bio %></p>
+            <% else %>
+                <p style="margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>About This User</strong> <br>I like to contribute to Post Card Co ! :)</p>
+            <% end %>
+            <p style="margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>Last Seen </strong> <br><%= time_ago_in_words(@user.last_sign_in_at) %></p>
+        </div>
+    </div>
 </div>
-<style>
-	.profile 
-{
-    min-height: 355px;
-    display: inline-block;
-    }
-figcaption.ratings
-{
-    margin-top:20px;
-    }
-figcaption.ratings a
-{
-    color:#f1c40f;
-    font-size:11px;
-    }
-figcaption.ratings a:hover
-{
-    color:#f39c12;
-    text-decoration:none;
-    }
-.divider 
-{
-    border-top:1px solid rgba(0,0,0,0.1);
-    }
-.emphasis 
-{
-    border-top: 4px solid transparent;
-    }
-.emphasis:hover 
-{
-    border-top: 4px solid #1abc9c;
-    }
-.emphasis h2
-{
-    margin-bottom:0;
-    }
-span.tags 
-{
-    background: #1abc9c;
-    border-radius: 2px;
-    color: #f5f5f5;
-    font-weight: bold;
-    padding: 2px 4px;
-    }
-.dropdown-menu 
-{
-    background-color: #34495e;    
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    width: 250px;
-    margin-left: -125px;
-    left: 50%;
-    }
-.dropdown-menu .divider 
-{
-    background:none;    
-    }
-.dropdown-menu>li>a
-{
-    color:#f5f5f5;
-    }
-.dropup .dropdown-menu 
-{
-    margin-bottom:10px;
-    }
-.dropup .dropdown-menu:before 
-{
-    content: "";
-    border-top: 10px solid #34495e;
-    border-right: 10px solid transparent;
-    border-left: 10px solid transparent;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    margin-left: -10px;
-    z-index: 10;
-    }
-</style>
+

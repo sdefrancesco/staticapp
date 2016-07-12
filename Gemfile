@@ -30,6 +30,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'stellar-js-rails', '~> 0.6.2.1'
 gem 'sunspot', '~> 2.2', '>= 2.2.5'
 gem 'lazyload-rails', '~> 0.3.1'
+gem 'will_paginate', '~> 3.1'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

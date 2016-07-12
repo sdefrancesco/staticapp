@@ -91,9 +91,11 @@
 
         		
         		<li class="dropdown">
+                
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <% if current_user.try(:admin?) %>
                    <i class="fa fa-diamond" style="color: #9227E1;"></i>
+
                 <% else %>
                   <i class="fa fa-user" style="color: #27E1CE; margin-right:5px;"></i>
                 <% end %>
@@ -208,6 +210,29 @@
     $('.navbar-default').css('border', 'none');  
     $('.adminbottom').css('opacity', '0');
     
+    $(document).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+    // user scrolled 50 pixels or more;
+    // do stuff
+        $('.adminbottom').addClass('animated slideInUp');
+        
+        $('.navbar-default').css('background-color', '#262626');
+        $('.navbar-default').css('-webkit-box-shadow', '1px 2px 5px 3px rgba(0,0,0,0.18)');
+        $('.adminbottom').css('opacity', '1');
+       
+        
+        } else {
+
+          
+          
+          $('.adminbottom').css('opacity', '0');
+          $('.navbar-default').css('background-color', 'transparent');
+          $('.navbar-default').css('-webkit-box-shadow', '0px 0px 0px 0px rgba(0,0,0,0.00)');
+          
+  };
+});
+
+
     
 
 
@@ -231,27 +256,7 @@
 
   });
 		
-		$(document).scroll(function() {
-  			if ($(document).scrollTop() > 50) {
-    // user scrolled 50 pixels or more;
-    // do stuff
-    		$('.adminbottom').addClass('animated slideInUp');
-    		
-        $('.navbar-default').css('background-color', '#262626');
-    		$('.navbar-default').css('-webkit-box-shadow', '1px 2px 5px 3px rgba(0,0,0,0.18)');
-        $('.adminbottom').css('opacity', '1');
-       
-        
-  			} else {
-
-          
-          
-          $('.adminbottom').css('opacity', '0');
-    			$('.navbar-default').css('background-color', 'transparent');
-    			$('.navbar-default').css('-webkit-box-shadow', '0px 0px 0px 0px rgba(0,0,0,0.00)');
-    			
-  };
-});
+		
 	});
 </script>
 <style>
