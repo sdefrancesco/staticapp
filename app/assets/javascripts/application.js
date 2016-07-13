@@ -24,12 +24,12 @@
 
   
 
-$(document).ready(function() {
+$(document).on('page:change', function() {
   
   
 	$(window).stellar();
 
-    
+
 		
 		$(document).scroll(function() {
   			if ($(document).scrollTop() >= 50) {
