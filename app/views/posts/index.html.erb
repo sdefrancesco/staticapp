@@ -1,6 +1,6 @@
 
 
-<div class='jumbotron vertical-center' data-stellar-background-ratio="0.5" style=";height:100vh;width:100%;background-size:cover; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
+<div class='jumbotron' data-stellar-background-ratio="0.5" style=";height:100vh;width:100%;background-size:cover; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
   <div class="vertical-center">
     
     <div class="container text-center">
@@ -27,7 +27,7 @@
     
       <% array_of_3_items.each do |post|%>
       <div class="col-md-3">
-        <div class="panel panel-default">
+        <div class="panel panel-default panel-custom">
           <div class="panel-heading">
             <b><%= post.title.titleize %></b>
             <br>
@@ -67,12 +67,16 @@
 
 </div>
 </div>
+
 <style>
   .pagination > .active > span {
     background-color:#27E1CE;
     border-color:white;
   }
 </style>
+
 <script>
   $.stellar();
+
+ 
 </script>

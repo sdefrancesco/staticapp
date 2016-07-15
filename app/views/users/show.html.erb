@@ -1,6 +1,12 @@
-<div class="jumbotron" style="height:auto; padding-top:100px; padding-bottom:100px;">
+<div class="jumbotron" style="height:auto; margin-bottom:0px;padding-top:100px; padding-bottom:100px; background: rgba(171,101,241,1);
+background: -moz-linear-gradient(45deg, rgba(171,101,241,1) 0%, rgba(101,67,254,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(171,101,241,1)), color-stop(100%, rgba(101,67,254,1)));
+background: -webkit-linear-gradient(45deg, rgba(171,101,241,1) 0%, rgba(101,67,254,1) 100%);
+background: -o-linear-gradient(45deg, rgba(171,101,241,1) 0%, rgba(101,67,254,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(171,101,241,1) 0%, rgba(101,67,254,1) 100%);
+">
     <div class="container">
-        <h1 style="font-family:'montserrat',sans-serif;">
+        <h1 style="font-family:'montserrat',sans-serif; color:white;">
             <% if @user.try(:admin?) %>
                 <i class="fa fa-diamond" style="color:purple"></i>
             <% else %>
@@ -14,24 +20,31 @@
         </h1>
         <div class="row">
         
-            <div style="max-width:400px; padding:5px; margin-bottom:10px;">
+            <div style="max-width:400px; padding:5px; margin-bottom:10px; color:white;">
                 <% if @user.avatar? %>
                     <%= image_tag @user.avatar.url(:medium), :class => 'img img-rounded img-circle', :style => 'width:200px; height:180px; display: inline-block' %>
                 <% else %>
-                    <image style="width:200px; height:180px; display: inline-block" class="img img-rounded img-circle" src="/assets/nobody.jpg"></image>
+                    <image style="width:180px; height:180px; display: inline-block" class="img img-rounded img-circle" src="/assets/nobody.jpg"></image>
                 <% end %>
                 <div style="float:right;display:inline-block; margin-top:30px;">
-                    <h5 class="text-muted"><i class="fa fa-envelope" style="margin-right:5px;"></i> <%= @user.email %></h5>
-                    <h5 class="text-muted"><i class="fa fa-phone" style="margin-right:5px;"></i> <%= @user.email %></h5>
-                    <h5 class="text-muted"><i class="fa fa-envelope" style="margin-right:5px;"></i> <%= @user.email %></h5>
+                    <h5 class="text-muted" style="color:white;"><i class="fa fa-envelope" style="margin-right:5px;"></i> <%= @user.email.capitalize %></h5>
+                    <h5 class="text-muted" style="color:white;"><i class="fa fa-phone" style="margin-right:5px;"></i> Private</h5>
+                    <h5 class="text-muted" style="color:white;"><i class="fa fa-home" style="margin-right:5px;"></i> Private</h5>
                 </div>
             </div>
             <% if @user.bio? %>
-                <p style="margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>About <%= @user.name %></strong> <br><%= @user.bio %></p>
+                <p style="color:white;margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>About <%= @user.name %></strong> <br><%= @user.bio %></p>
             <% else %>
-                <p style="margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>About This User</strong> <br>I like to contribute to Post Card Co ! :)</p>
+                <p style="color:white;margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>About This User</strong> <br>I like to contribute to Post Card Co ! :)</p>
             <% end %>
-            <p style="margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>Last Seen </strong> <br><%= time_ago_in_words(@user.last_sign_in_at) %></p>
+            <p style="color:white;margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>Last Seen </strong> <br><%= time_ago_in_words(@user.last_sign_in_at) %></p>
+            <p style="color:white;margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>User Type </strong> <br>
+            <% if @user.admin? %>
+                <span class="label label-warning">Administrator</span>
+            <% else %>
+                <span class="label label-primary">Artist</span>
+            <% end %>
+                </p>
         </div>
     </div>
 </div>

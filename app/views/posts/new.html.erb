@@ -1,16 +1,33 @@
-<div class="jumbotron">
+<div class="jumbotron text-center" style="height:auto; padding-top:120px; padding-bottom:100px;">
 <div class="container">
-	<h1>Add A New Card</h1>
+	<image style="width:180px;padding-bottom:10px; height:auto;"src="/assets/postcardcologofix.png"></image>
+	<h1 style="font-family:'roboto',sans-serif; font-weight:100;"><i class="fa fa-plus" style="margin-right:8px;"></i>Add A Card</h1>
+	<h6 class="h6class">Upload A Card That You've Designed In Your Favorite Image Editing Software</h6>
 </div>
 </div>
 
-
+<div style="max-width:600px;"
 <div class="container">
 
-	<h1>New Post</h1>
+	<h2 style="font-family:'montserrat',sans-serif">New Card</h2>
 
 	<%= render 'form' %>
-
+<br>
 	<%= link_to 'Back', posts_path %>
+	<br>
+	<hr>
 
 </div>
+<style>
+	input#post_title.string.required.form-control {
+		font-size:12px;
+	}
+
+	textarea#post_description.text.required.form-control {
+		font-size:12px;
+	}
+
+	textarea#post_description.text.required.form-control {
+		height:150px;
+	}
+</style>

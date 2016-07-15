@@ -1,10 +1,11 @@
+
+
+<% if current_user.try(:admin?) %>
 <div class="jumbotron">
 	<div class="container">
 		<h1>Administration</h1>
 	</div>
 </div>
-
-<% if current_user.try(:admin?) %>
 	<div class="container">
 		<h1>Sup <%= current_user.email %>. You Know You're an Admin Right?</h1>
 		<div class="row">
@@ -66,7 +67,19 @@
 		</div>
 
 	<% else %>
-		<h1>gtfo dude.</h1>
+		<div style="
+background: rgba(157,101,241,1);
+background: -moz-linear-gradient(45deg, rgba(157,101,241,1) 0%, rgba(83,67,254,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(157,101,241,1)), color-stop(100%, rgba(83,67,254,1)));
+background: -webkit-linear-gradient(45deg, rgba(157,101,241,1) 0%, rgba(83,67,254,1) 100%);
+background: -o-linear-gradient(45deg, rgba(157,101,241,1) 0%, rgba(83,67,254,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(157,101,241,1) 0%, rgba(83,67,254,1) 100%);
+background: linear-gradient(45deg, rgba(157,101,241,1) 0%, rgba(83,67,254,1) 100%); height:100vh;padding-top:200px;"  class=" text-center">
+		<div class="container">
+		<h2 style="color:white;"><i class="fa fa-gitlab"></i></h2>
+			<h1 style="font-family:'roboto',sans-serif; font-weight:100; font-size:60px; color:white;">Sorry.</h1>
+			<h6 class="h6class" style="color:white;"><b>Something went wrong, Or you Can't View This Page</b></h6>
+			</div>
 		</div>
 <% end %>
 </div>

@@ -1,7 +1,16 @@
+<div style="
+background: rgba(241,101,103,1);
+background: -moz-linear-gradient(45deg, rgba(241,101,103,1) 0%, rgba(254,67,130,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(241,101,103,1)), color-stop(100%, rgba(254,67,130,1)));
+background: -webkit-linear-gradient(45deg, rgba(241,101,103,1) 0%, rgba(254,67,130,1) 100%);
+background: -o-linear-gradient(45deg, rgba(241,101,103,1) 0%, rgba(254,67,130,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(241,101,103,1) 0%, rgba(254,67,130,1) 100%);
+background: linear-gradient(45deg, rgba(241,101,103,1) 0%, rgba(254,67,130,1) 100%);">
 <div class="container">
 <div style="max-width:500px; margin-left:auto; margin-right:auto; padding-top:100px; padding-bottom:50px;">
-<h2 style="font-family:'raleway',sans-serif; font-weight:100"><i class="fa fa-lock" style="margin-right:8px; color:gray"></i></h2>
-Edit <%= resource_name.to_s.humanize %>Edit <%= resource_name.to_s.humanize %>
+<h2 style="color:white;font-family:'raleway',sans-serif; font-weight:100"><i class="fa fa-lock" style="margin-right:8px; color:white"></i>Edit Your User Information</h2>
+
+<h5 style="color:white;">Go Ahead And Edit Your Information If needed, <b><% if @user.name? %><%= @user.name.titleize %><% else %><%= @user.email.capitalize %><%end %></b></h5>
 
 
 
@@ -10,32 +19,85 @@ Edit <%= resource_name.to_s.humanize %>Edit <%= resource_name.to_s.humanize %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  <div style="color:white; font-family:'montserrat',sans-serif; font-size:12px;";>
     <%= f.input :email, required: true, autofocus: true %>
-
+</div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-    <%= f.input :name %>
+    <div style="color:white; font-family:'montserrat',sans-serif; font-size:12px;";>
+      <%= f.input :name %>
+    </div>
+    <div style="color:white; font-family:'montserrat',sans-serif; font-size:12px;">
     <%= f.input :bio %>
+    </div>
+    <div style="color:white; font-family:'montserrat',sans-serif; font-size:12px;">
     <%= f.date_select :date_of_birth, :start_year => 1950, :end_year => 2012 %>
+    </div>
+    <div style="color:white; font-family:'montserrat',sans-serif; font-size:12px;">
     <%= f.input :avatar, as: :file %>
+    </div>
+    <div style="color:white; font-family:'montserrat',sans-serif;font-size:12px;">
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+    </div>
+    <div style="color:white; font-family:'montserrat',sans-serif;font-size:12px;">
     <%= f.input :password_confirmation, required: false %>
+    </div>
+    <div style="color:white; font-family:'montserrat',sans-serif;font-size:12px;">
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    </div>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
+<div style="color:white margin-top:150px;">
+<h3 style="color:white; padding-top:20px;">Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
 
 </div>
 </div>
+</div>
+<style>
 
+input#user_name.string.optional.form-control {
+  color:white;
+  font-size:12px;
+
+}
+
+input#user_email.string.email.required.form-control {
+  color:white;
+  font-size:12px;
+}
+
+textarea#user_bio.text.optional.form-control {
+  color:white;
+  font-size:12px;
+}
+
+input#user_password.password.optional.form-control {
+  color:white;
+  font-size:12px;
+}
+
+input#user_password_confirmation.password.optional.form-control {
+  color:white;
+  font-size:12px;
+}
+
+input#user_current_password.password.required.form-control {
+  color:white;
+  font-size:12px;
+}
+
+textarea#user_bio.text.optional.form-control {
+  height:150px;
+}
+</style>

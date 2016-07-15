@@ -17,4 +17,8 @@ class StaticpagesController < ApplicationController
 		@user = User.all
 		@post = Post.all
 	end
+
+	def gettingstarted
+
+	end
 end

@@ -12,9 +12,9 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<% if user_signed_in? %> 
 <!--
+<% if user_signed_in? %> 
+
  <div style="position:fixed; z-index:99999; top:500px;"> <h3><i class="fa fa-arrow-right arrowbtn"></i></h3></div>
   <div id="slideoutuser" style="-webkit-box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);
 -moz-box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);
@@ -133,10 +133,10 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
                   <%= current_user.email %> <span class="caret"></span>
                 
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu animated flipInX">
                   <li><%= link_to 'Profile', current_user %></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">My Cards</a></li>
+                  <li><a href="#">Dashboard</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Your Account </li>
                   
@@ -184,11 +184,11 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
 
 			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>About Us</h3>
-				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				<p>We are revolutionizing the greeting card industry. Contribute to the community and start uploading some artwork! </p>
 				<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="fa fa-arrow-right"></i></a></p>
 			</div>
 			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-				<h3>Site Map</h3>
+				<h3><i class="fa fa-sitemap" style="margin-right:10px;"></i>Site Map</h3>
 				<ul class="float">
 					<li><a href="#">About Us</a></li>
 					<li><a href="#">Getting Started</a></li>
@@ -240,6 +240,8 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
     $('.navbar-default').css('background-color', 'transparent');
     $('.navbar-default').css('border', 'none');  
     $('.adminbottom').css('opacity', '0');
+
+    
     
 
     $('.xbtn').click(function() {
@@ -267,6 +269,7 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
         $('.navbar-default').css('background-color', '#262626');
         $('.navbar-default').css('-webkit-box-shadow', '1px 2px 5px 3px rgba(0,0,0,0.18)');
         $('.adminbottom').css('opacity', '1');
+
         
 
 
@@ -327,6 +330,48 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
     font-size:12px;
 
   }
+
+  #user_date_of_birth_3i {
+    
+border:none;
+color:rgb(129, 128, 128);
+font-family:'montserrat',sans-serif;
+font-size:12px;
+border-radius:0px;
+padding:10px;
+  }
+
+  #user_date_of_birth_2i {
+    
+border:none;
+color:rgb(129, 128, 128);
+font-family:'montserrat',sans-serif;
+font-size:12px;
+border-radius:0px;
+padding:10px;
+  }
+
+  #user_date_of_birth_1i {
+  
+border:none;
+color:rgb(129, 128, 128);
+font-family:'montserrat',sans-serif;
+font-size:12px;
+border-radius:0px;
+padding:10px;
+  }
+
+
+#user_avatar.file.optional {
+  font-family:'montserrat',sans-serif;
+
+font-size:12px;
+color:#27E1CE;
+}
+
+.dropdown-menu > li > a {
+  font-size:12px;
+}
 </style>
 </body>
 </html>

@@ -28,7 +28,7 @@ $(document).on('page:change', function() {
   
   
 	$(window).stellar();
-
+ 
 
 		
 		$(document).scroll(function() {
