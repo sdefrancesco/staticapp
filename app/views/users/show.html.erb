@@ -41,8 +41,10 @@ background: -ms-linear-gradient(45deg, rgba(171,101,241,1) 0%, rgba(101,67,254,1
             <p style="color:white;margin-left:5px;font-family:'montserrat', sans-serif; font-size:12px;" class="text-muted"><strong>User Type </strong> <br>
             <% if @user.admin? %>
                 <span class="label label-warning">Administrator</span>
-            <% else %>
+            <% elsif @user.artist? %>
                 <span class="label label-primary">Artist</span>
+            <% else %>
+                <span class="label label-success">User</span>
             <% end %>
                 </p>
         </div>
