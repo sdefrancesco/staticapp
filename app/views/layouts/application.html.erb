@@ -10,8 +10,12 @@
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,500|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+
+
 <!--
 <% if user_signed_in? %> 
 
@@ -44,11 +48,17 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
   </div>
 <% end %>
 -->
+
+<!-- if current user is not an artist, or is one ?? -->
+
+<!-- end current_user.artist -->
+
 <% if current_user.try(:admin?) %>
   
   <nav class="admintop" style=" -webkit-box-shadow: 1px 2px 5px 3px rgba(0,0,0,0.18);padding-top:5px; padding-bottom:5px;top:0px;width:100%; background-color:#27E1CE;position:fixed; z-index:999; height:auto;">
       <div class="container">
-        <h6 style="color:white;"class="h6class"><i style="margin-right:5px;"class="fa fa-diamond"></i>POST Card Co Admin<i style="float:right" class="adminclosebtn fa fa-close"></i></h6>
+        <h6 id="inner" style="color:white;"class="h6class"><i style="margin-right:5px;"class="fa fa-diamond"></i>POST Card Co Admin<i style="float:right" class="adminclosebtn fa fa-close"></i></h6>
+
 
       </div> 
     </nav>
@@ -165,7 +175,7 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
 
 
 
-
+<div id="footer"style="z-index:2;">
 <div data-stellar-background-ratio="0.5" class="fh5co-cta" style="background-image: url('/assets/slide_2.jpg'); background-attachment:fixed;background-size:cover;">
 		<div class="overlay"></div>
 		<div class="container">
@@ -184,12 +194,12 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
 
 			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>About Us</h3>
-				<p>We are revolutionizing the greeting card industry. Contribute to the community and start uploading some artwork! </p>
+				<p style="font-family:'open sans', sans-serif; font-weight:300;">We are revolutionizing the greeting card industry. Contribute to the community and start uploading some artwork! </p>
 				<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="fa fa-arrow-right"></i></a></p>
 			</div>
 			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3><i class="fa fa-sitemap" style="margin-right:10px;"></i>Site Map</h3>
-				<ul class="float">
+				<ul class="float" style="font-family:'open sans',sans-serif; font-weight:300;">
 					<li><a href="#">About Us</a></li>
 					<li><a href="#">Getting Started</a></li>
 					<li><a href="#">Careers</a></li>
@@ -225,6 +235,7 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
 			
 		</div>
 	</footer>
+  </div>
 	<script src="assets/jquery.min.js"></script>
  
 	<script>
@@ -292,7 +303,8 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
     };
 
 		
-    
+  
+
     
   
   $(".adminclosebtn").click(function() {
@@ -372,6 +384,27 @@ color:#27E1CE;
 .dropdown-menu > li > a {
   font-size:12px;
 }
+
+.aclass:hover {
+  text-decoration:none;
+  -webkit-transition-duration:1s;
+}
+
+.aclass {
+  -webkit-transition-duration:1s;
+}
+
+a:hover {
+  background-color:transparent;
+  color:white;
+}
+
+a:visited {
+  color: #a4cbdc;
+  -webkit-transition-duration:1s;
+  transition-duration:1s;
+}
+
 </style>
 </body>
 </html>

@@ -1,22 +1,14 @@
 
 
-<div class='jumbotron' data-stellar-background-ratio="0.5" style=";height:100vh;width:100%;background-size:cover; background: url('/assets/slide_2.jpeg'); background-attachment:fixed;">
-  <div class="vertical-center">
-    
-    <div class="container text-center">
-      
-      <image style="width:130px; margin-left:auto; margin-right:auto;"class="img img-responsive" src="/assets/postcardcologofix.png"></image>
-      <h1 class="" style="color:white;font-family:'montserrat', sans-serif;">Our Cards</h1>
-      <p class="" style="font-family:'raleway', sans-serif; color:white; font-weight:100">All Of Our Cards. Contributed by Our Artists</p>
-      <% if user_signed_in? %>
-        <%= link_to 'Add A Card <i class="fa fa-plus"></i>'.html_safe, new_post_path, :class => 'btn btn-primary btn-outline with-arrow' %>
-      <% end %>
-    </div>
-  </div>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Our Cards</h1>
+    <h4>Contributed By You</h4>
   </div>
 </div>
 
-<div class="container">
+<div id="content">
+<div  class="container">
   <h1 style="font-family:'montserrat', sans-serif">Recently Added</h1>
   <h6 class="text-muted">There are currently  <b><%= @user.count %></b> active users and <b><%= @posts.count %></b> Card Uploads.</h6>
 
@@ -64,7 +56,7 @@
 
   <%= link_to 'New Post<i class="fa fa-arrow-right"></i>'.html_safe, new_post_path, :class => 'btn btn-primary btn-outline with-arrow' %>
 
-
+</div>
 </div>
 </div>
 
@@ -87,6 +79,8 @@
   align-items: center;
 
   }
+
+ 
 </style>
 
 <script>

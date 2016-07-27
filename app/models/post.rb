@@ -7,5 +7,6 @@ class Post < ActiveRecord::Base
 	validates_attachment_content_type :postcardimg, :content_type => /\Aimage\/.*\Z/
 	validates_attachment_presence :postcardimg, :message => 'You Need To Attach A Card For Upload'
 
+ 
 
 end

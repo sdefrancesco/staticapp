@@ -22,8 +22,10 @@
 						<%= link_to user.email.capitalize, user  %>
 						<% if user.admin? %>
 							<span class="label label-primary">Admin</span>
+						<% elsif user.artist? %>
+							<span class="label labe-primary">Artist</span>
 						<% else %>
-							<span class="label label-default">Artist</span>
+							<span class="label label-success">User</span>
 						<% end %>
 					</div>
 					<div class="panel-body">
