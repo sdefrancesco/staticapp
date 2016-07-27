@@ -33,8 +33,7 @@ gem 'sunspot', '~> 2.2', '>= 2.2.5'
 gem 'lazyload-rails', '~> 0.3.1'
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
-gem 'sunspot_rails', '~> 2.2', '>= 2.2.5'
-gem 'sunspot_solr', '~> 2.2', '>= 2.2.5'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
