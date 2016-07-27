@@ -1,4 +1,4 @@
-<div class="jumbotron text-center" style="height:auto; padding-top:120px; padding-bottom:100px;">
+<div class="jumbotron text-center" style="width:100%;height:auto; padding-top:120px; padding-bottom:100px; position:fixed;">
 <div class="container">
 	<image style="width:180px;padding-bottom:10px; height:auto;"src="/assets/postcardcologofix.png"></image>
 	<h1 style="font-family:'roboto',sans-serif; font-weight:100;"><i class="fa fa-plus" style="margin-right:8px;"></i>Add A Card</h1>
@@ -6,18 +6,22 @@
 </div>
 </div>
 
-<div style="max-width:600px;"
-<div class="container">
+<div style="background-color:white; position:relative; top:400px; height:1000px; padding-top:50px;">
+	<div class="container" style="max-width:600px;">
+		
+	
 
-	<h2 style="font-family:'montserrat',sans-serif">New Card</h2>
+		<h2 style="font-family:'montserrat',sans-serif">New Card</h2>
 
-	<%= render 'form' %>
-<br>
-	<%= link_to 'Back', posts_path %>
+		<%= render 'form' %>
 	<br>
-	<hr>
+		<%= link_to 'Back', posts_path %>
+		<br>
+		<hr>
 
+	</div>
 </div>
+
 <style>
 	input#post_title.string.required.form-control {
 		font-size:16px;
