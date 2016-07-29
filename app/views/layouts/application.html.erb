@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Staticapp</title>
+  <title>POST Card Co</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -200,9 +200,9 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
 			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3><i class="fa fa-sitemap" style="margin-right:10px;"></i>Site Map</h3>
 				<ul class="float" style="font-family:'open sans',sans-serif; font-weight:300;">
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Getting Started</a></li>
-					<li><a href="#">Careers</a></li>
+					<li><%= link_to 'About Us', about_path %></li>
+					<li><%= link_to 'Getting Started', gettingstarted_path %></li>
+					<li><%= link_to 'Carreers', careers_path %></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
         <% if user_signed_in? %>
@@ -220,10 +220,10 @@ box-shadow: 1px 10px 19px 1px rgba(0,0,0,0.75);position:fixed; z-index:9999;back
 			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Follow Us</h3>
 				<ul class="fh5co-social">
-					<li><a href="#"><i class="fa fa-twitter" style="color:#27E1CE;"></i></a></li>
+					
 					<li><a href="#"><i class="fa fa-facebook" style="color:#27E1CE;"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus" style="color:#27E1CE;"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram" style="color:#27E1CE;"></i></a></li>
+					
+					
 				</ul>
 			</div>
 			

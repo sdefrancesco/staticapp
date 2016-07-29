@@ -14,13 +14,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap-sprockets
 //= require jquery.stellar
+//= require_tree .
 
 
 
-  
+ 
 
   
 
@@ -28,7 +28,7 @@ $(document).on('page:change', function() {
   
   
 	$(window).stellar();
- 
+
 
 		
 		$(document).scroll(function() {

@@ -1,16 +1,21 @@
 
-
 <div class="jumbotron">
-  <div class="container">
-    <h1>Our Cards</h1>
-    <h4>Contributed By You</h4>
+  <div class="container text-center">
+    <h1><i class="fa fa-compass"></i></h1>
+    <h1 style="font-family:'open sans',sans-serif; font-weight:100;">Explore Our Cards</h1>
+    <h6 class="h6class">Created and Contributed By <b>You</b></h6>
   </div>
 </div>
+
+
+
 
 <div id="content">
 <div  class="container">
   <h1 style="font-family:'montserrat', sans-serif">Recently Added</h1>
   <h6 class="text-muted">There are currently  <b><%= @user.count %></b> active users and <b><%= @posts.count %></b> Card Uploads.</h6>
+
+
 
 
 
@@ -60,6 +65,9 @@
 </div>
 </div>
 
+
+
+
 <style>
   .pagination > .active > span {
     background-color:#27E1CE;
@@ -79,12 +87,49 @@
   align-items: center;
 
   }
+.carousel-caption {
+  margin-top:50%;
+  position:absolute;
+}
+
+.img-hover:hover {
+  transform:scale(1.15);
+  transition-duration:0.5s;
+  -webkit-transition-duration:0.5s;
+
+
+}
+
+.img-hover {
+  
+  transition-duration:0.5s;
+  -webkit-transition-duration:0.5s;
+  
+  
+}
+ 
+
+ .hidden-overlay {
+  background-color:rgba(39, 225, 206, 0.64);
+  position:absolute;
+  transition-duration:1s;
+  -webkit-transition-duration:1s;
+  height:100%;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  
+ } 
+ 
+
 
  
 </style>
 
 <script>
-  $.stellar();
+   
 
- 
+  
 </script>
+ 
+
